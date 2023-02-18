@@ -1,37 +1,38 @@
 #include <stdio.h>
 
 /**
- *  * main - prints all possible different combinations of two digits
- *   * Return: 0
+ *  * main - Prints all possible combinations of two different digits,
+ *   *        in ascending order, separated by a comma followed by a space.
+ *    *
+ *     * Return: Always 0.
  **/
 int main(void)
 {
-	int i, j;
+	/* Declare variables for two digits */
+	int digit1, digit2;
 
-	for (i = 0; i < 99; i++)
+	/* Loop through all combinations of two digits */
+	for (digit1 = 0; digit1 < 9; digit1++)
 	{
-		for (j = i + 1; j < 100; j++)
+		for (digit2 = digit1 + 1; digit2 < 10; digit2++)
 		{
-			/* Print first digit */
-			putchar((i / 10) + '0');
-			putchar((i % 10) + '0');
-			/* Print separator */
+			/* Print the two digits */
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			/* Check if this is the last combination */
+			if (digit1 == 8 && digit2 == 9)
+				continue;
+
+			/* Print the comma and space separator */
 			putchar(',');
 			putchar(' ');
-			/* Print second digit */
-			putchar((j / 10) + '0');
-			putchar((j % 10) + '0');
-
-			/* If it's not the last combination, print a comma and space */
-			if (i != 98 || j != 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
 		}
 	}
 
+	/* Print a newline character at the end */
 	putchar('\n');
+
 	return (0);
 }
 
