@@ -1,5 +1,3 @@
-
-
 /**
  ** print_alphabet - Prints the alphabet in lowercase using only putchar
  *
